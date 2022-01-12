@@ -199,6 +199,9 @@
     <EmbeddedResource Include="master_lokasi.resx">
       <DependentUpon>master_lokasi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="master_petugas.resx">
+      <DependentUpon>master_petugas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="master_user.resx">
       <DependentUpon>master_user.cs</DependentUpon>
     </EmbeddedResource>

@@ -190,6 +190,9 @@
     <EmbeddedResource Include="main_anggota.resx">
       <DependentUpon>main_anggota.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="master_anggota.resx">
+      <DependentUpon>master_anggota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="master_buku.resx">
       <DependentUpon>master_buku.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +208,9 @@
     <EmbeddedResource Include="master_user.resx">
       <DependentUpon>master_user.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="peminjaman.resx">
+      <DependentUpon>peminjaman.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -216,6 +222,9 @@
     </Compile>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tambah_peminjaman.resx">
+      <DependentUpon>tambah_peminjaman.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

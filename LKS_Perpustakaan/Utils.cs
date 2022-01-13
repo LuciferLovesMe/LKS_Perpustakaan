@@ -41,4 +41,9 @@ namespace LKS_Perpustakaan
             return table;
         }
     }
+
+    class Selected
+    {
+        public static int id { set; get; }
+    }
 }

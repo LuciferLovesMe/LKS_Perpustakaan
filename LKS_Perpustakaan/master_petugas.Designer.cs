@@ -191,7 +191,7 @@ namespace LKS_Perpustakaan
             // 
             // panel_petugas
             // 
-            this.panel_petugas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(44)))), ((int)(((byte)(153)))));
+            this.panel_petugas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(12)))), ((int)(((byte)(121)))));
             this.panel_petugas.Controls.Add(this.label5);
             this.panel_petugas.Controls.Add(this.label6);
             this.panel_petugas.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -450,6 +450,7 @@ namespace LKS_Perpustakaan
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(899, 266);
             this.dataGridView1.TabIndex = 58;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label17
             // 
@@ -564,6 +565,7 @@ namespace LKS_Perpustakaan
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(304, 26);
             this.textBox3.TabIndex = 62;
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // label19
             // 

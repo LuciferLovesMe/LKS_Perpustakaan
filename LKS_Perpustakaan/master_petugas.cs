@@ -13,7 +13,10 @@ namespace LKS_Perpustakaan
 {
     public partial class master_petugas : Form
     {
-        int id, cond;
+        int cond;
+        string id;
+        SqlConnection connection = new SqlConnection(Utils.conn);
+
         public master_petugas()
         {
             InitializeComponent();
@@ -43,9 +46,9 @@ namespace LKS_Perpustakaan
             btn_hapus.Enabled = false;
             btn_simpan.Enabled = true;
             btn_batal.Enabled = true; 
-            textBox2.Enabled = false;
-            textBox3.Enabled = false;
-            textBox4.Enabled = false;
+            textBox2.Enabled = true;
+            textBox3.Enabled = true;
+            textBox4.Enabled = true;
         }
 
         void loadgrid()
@@ -56,7 +59,6 @@ namespace LKS_Perpustakaan
 
         bool getnik()
         {
-            SqlConnection connection = new SqlConnection(Utils.conn);
             SqlCommand command = new SqlCommand("select * from petugas where nik = '" + textBox3.Text + "'", connection);
             connection.Open();
             SqlDataReader reader = command.ExecuteReader();
@@ -79,7 +81,32 @@ namespace LKS_Perpustakaan
                 MessageBox.Show("Semua field wajib diisi!", "Eror", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+            else if (textBox3.TextLength != 16)
+            {
+                MessageBox.Show("NIK harus 16 digit", "Eror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if(getnik() == false)
+            {
+                MessageBox.Show("NIK telah digunakan", "Eror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
+            return true;
+        }
+
+        bool val_up()
+        {
+            if (textBox2.TextLength < 1 || textBox3.TextLength < 1 || textBox4.TextLength < 1)
+            {
+                MessageBox.Show("Semua field wajib diisi!", "Eror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (textBox3.TextLength != 16)
+            {
+                MessageBox.Show("NIK harus 16 digit", "Eror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
             return true;
         }
@@ -186,7 +213,7 @@ namespace LKS_Perpustakaan
                 DialogResult result = MessageBox.Show("Apakah anda yakin ingin menghapus?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(result == DialogResult.Yes)
                 {
-                    string com = "delete from petugas where id_petugas = " + id;
+                    string com = "delete from petugas where id_petugas = '" + id + "'";
                     try
                     {
                         Command.exec(com);
@@ -199,28 +226,107 @@ namespace LKS_Perpustakaan
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message, "Eror", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        SqlConnection connection = new SqlConnection(Utils.conn);
                         connection.Close();
                     }
                 }
             }
         }
+
         string getuser()
         {
-            SqlConnection connection = new SqlConnection(Utils.conn);
-            SqlCommand command = new SqlCommand("select count(id) from [dbo].[user] where level = 'petugas'", connection);
+            SqlCommand command = new SqlCommand("select count(id_user) as num from [dbo].[user] where level = 'petugas'", connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+            if (reader.HasRows)
+            {
+                int c = Convert.ToInt32(reader["num"]) + 1;
+                connection.Close();
+                return "PET" + c.ToString();
+            }
+            connection.Close();
+            return "PET1";
+        }
 
+        string getuser1()
+        {
+            SqlCommand command = new SqlCommand("select count(id_user) as num from [dbo].[user] where level = 'petugas'", connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+            if (reader.HasRows)
+            {
+                int c = Convert.ToInt32(reader["num"]);
+                connection.Close();
+                return "PET" + c.ToString();
+            }
+            connection.Close();
+            return "PET1";
         }
 
         private void btn_simpan_Click(object sender, EventArgs e)
         {
-            if (val())
+            if(cond == 1)
             {
-                if(cond == 1)
+                if (val())
                 {
-                    string com = "insert into [dbo].[user] values('')"
+                    string com = "insert into [dbo].[user] values('" + getuser() + "', '123123123', 'petugas')";
+                    Command.exec(com);
+
+                    SqlCommand comm = new SqlCommand("select top(1) * from [dbo].[user] where level = 'petugas' order by id_user desc", connection);
+                    connection.Open();
+                    SqlDataReader reader = comm.ExecuteReader();
+                    reader.Read();
+                    int userid = Convert.ToInt32(reader["id_user"]);
+                    connection.Close();
+
+                    string command = "insert into petugas values('" + getuser1() +"', '" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox4.Text + "', " + userid + ")";
+                    try
+                    {
+                        Command.exec(command);
+                        MessageBox.Show("Success", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dis();
+                        loadgrid();
+                        clear();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Eror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        connection.Close();
+                    }
                 }
             }
+
+            else if (cond == 2)
+            {
+                if (val_up())
+                {
+                    string com = "update petugas set nama_petugas = '" + textBox2.Text + "', nik = '" + textBox3.Text + "', alamat = '" + textBox4.Text + "' where id_petugas = '" + id + "'";
+                    try
+                    {
+                        Command.exec(com);
+                        MessageBox.Show("Success", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dis();
+                        loadgrid();
+                        clear();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Eror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        connection.Close();
+                    }
+
+                }
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.CurrentRow.Selected = true;
+            id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            textBox2.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            textBox3.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            textBox4.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -230,6 +336,11 @@ namespace LKS_Perpustakaan
             {
                 Application.Exit();
             }
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == 8);
         }
     }
 }

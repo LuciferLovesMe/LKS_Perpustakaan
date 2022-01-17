@@ -16,7 +16,7 @@ namespace LKS_Perpustakaan
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainLogin());
+            Application.Run(new Splash());
         }
     }
 }

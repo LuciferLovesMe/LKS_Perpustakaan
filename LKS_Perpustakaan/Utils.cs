@@ -10,7 +10,7 @@ namespace LKS_Perpustakaan
 {
     class Utils
     {
-        public static string conn = @"Data Source=desktop-00eposj;Initial Catalog=perpustakaan;Integrated Security=True";
+        public static string conn = @"Data Source=asmodeus;Initial Catalog=perpustakaan;Integrated Security=True";
     }
 
     class Model

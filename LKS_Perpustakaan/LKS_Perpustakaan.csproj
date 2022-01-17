@@ -181,8 +181,17 @@
       <DependentUpon>tambah_peminjaman.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="cari_buku.resx">
+      <DependentUpon>cari_buku.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="detail_peminjaman.resx">
       <DependentUpon>detail_peminjaman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="history_peminjaman.resx">
+      <DependentUpon>history_peminjaman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="history_pengembalian.resx">
+      <DependentUpon>history_pengembalian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main_admin.resx">
       <DependentUpon>main_admin.cs</DependentUpon>

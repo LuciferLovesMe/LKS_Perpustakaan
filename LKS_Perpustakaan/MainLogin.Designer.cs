@@ -48,13 +48,13 @@ namespace LKS_Perpustakaan
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Brown;
+            this.button1.BackColor = System.Drawing.Color.IndianRed;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(711, 13);
+            this.button1.Location = new System.Drawing.Point(742, -1);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 34);
+            this.button1.Size = new System.Drawing.Size(60, 40);
             this.button1.TabIndex = 0;
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = false;
@@ -138,7 +138,7 @@ namespace LKS_Perpustakaan
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(166)))), ((int)(((byte)(103)))));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(49)))), ((int)(((byte)(192)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
@@ -152,9 +152,8 @@ namespace LKS_Perpustakaan
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(42)))), ((int)(((byte)(137)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(7)))), ((int)(((byte)(203)))));
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -166,7 +165,7 @@ namespace LKS_Perpustakaan
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(14, 223);
+            this.label6.Location = new System.Drawing.Point(14, 218);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(171, 23);
             this.label6.TabIndex = 12;
@@ -176,8 +175,8 @@ namespace LKS_Perpustakaan
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift SemiBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(12, 9);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(230, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(154, 33);
             this.label5.TabIndex = 11;
@@ -200,6 +199,7 @@ namespace LKS_Perpustakaan
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.captcha);
             this.Controls.Add(this.textBox3);

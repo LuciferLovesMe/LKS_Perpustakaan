@@ -48,7 +48,7 @@ namespace LKS_Perpustakaan
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe MDL2 Assets", 80.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(235)))), ((int)(((byte)(63)))));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(331, 127);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(152, 107);
@@ -75,7 +75,7 @@ namespace LKS_Perpustakaan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(42)))), ((int)(((byte)(137)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(7)))), ((int)(((byte)(203)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

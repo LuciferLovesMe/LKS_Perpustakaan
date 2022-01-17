@@ -85,13 +85,7 @@ namespace LKS_Perpustakaan
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Apakah anda yakin untuk Logout ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                MainLogin master = new MainLogin();
-                this.Hide();
-                master.ShowDialog();
-            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -181,6 +181,9 @@
       <DependentUpon>tambah_peminjaman.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="detail_peminjaman.resx">
+      <DependentUpon>detail_peminjaman.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="main_admin.resx">
       <DependentUpon>main_admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="peminjaman.resx">
       <DependentUpon>peminjaman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pengembalian.resx">
+      <DependentUpon>pengembalian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -430,9 +430,9 @@ namespace LKS_Perpustakaan
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1101, 12);
+            this.button2.Location = new System.Drawing.Point(1145, -1);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 39);
+            this.button2.Size = new System.Drawing.Size(57, 37);
             this.button2.TabIndex = 13;
             this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = false;
@@ -481,7 +481,7 @@ namespace LKS_Perpustakaan
             this.btn_batal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_batal.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_batal.ForeColor = System.Drawing.Color.White;
-            this.btn_batal.Location = new System.Drawing.Point(1058, 653);
+            this.btn_batal.Location = new System.Drawing.Point(758, 654);
             this.btn_batal.Name = "btn_batal";
             this.btn_batal.Size = new System.Drawing.Size(115, 35);
             this.btn_batal.TabIndex = 27;
@@ -495,7 +495,7 @@ namespace LKS_Perpustakaan
             this.btn_hapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_hapus.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_hapus.ForeColor = System.Drawing.Color.White;
-            this.btn_hapus.Location = new System.Drawing.Point(674, 654);
+            this.btn_hapus.Location = new System.Drawing.Point(516, 654);
             this.btn_hapus.Name = "btn_hapus";
             this.btn_hapus.Size = new System.Drawing.Size(115, 35);
             this.btn_hapus.TabIndex = 26;
@@ -509,7 +509,7 @@ namespace LKS_Perpustakaan
             this.btn_simpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_simpan.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_simpan.ForeColor = System.Drawing.Color.White;
-            this.btn_simpan.Location = new System.Drawing.Point(868, 654);
+            this.btn_simpan.Location = new System.Drawing.Point(637, 654);
             this.btn_simpan.Name = "btn_simpan";
             this.btn_simpan.Size = new System.Drawing.Size(115, 35);
             this.btn_simpan.TabIndex = 25;
@@ -523,7 +523,7 @@ namespace LKS_Perpustakaan
             this.btn_ubah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ubah.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ubah.ForeColor = System.Drawing.Color.White;
-            this.btn_ubah.Location = new System.Drawing.Point(472, 654);
+            this.btn_ubah.Location = new System.Drawing.Point(395, 654);
             this.btn_ubah.Name = "btn_ubah";
             this.btn_ubah.Size = new System.Drawing.Size(115, 35);
             this.btn_ubah.TabIndex = 24;

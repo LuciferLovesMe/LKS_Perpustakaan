@@ -147,10 +147,10 @@ namespace LKS_Perpustakaan
             {
                 int c = Convert.ToInt32(reader["num"]);
                 connection.Close();
-                return "PET" + c.ToString();
+                return "ANG" + c.ToString();
             }
             connection.Close();
-            return "PET1";
+            return "ANG1";
         }
 
         private void panel_buku_Click(object sender, EventArgs e)

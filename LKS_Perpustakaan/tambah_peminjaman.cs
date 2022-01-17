@@ -22,6 +22,10 @@ namespace LKS_Perpustakaan
 
             lbltime.Text = DateTime.Now.ToString("dddd, dd-MM-yyyy / HH:mm:ss");
             lbladmin.Text = Model.name;
+            tb_judul.Enabled = false;
+            tb_kategori.Enabled = false;
+            tb_penerbit.Enabled = false;
+            tb_penulis.Enabled = false;
         }
 
         void loadanggota()
@@ -34,9 +38,14 @@ namespace LKS_Perpustakaan
 
         bool val()
         {
-            if(comboBox1.SelectedValue == null || textBox1.TextLength < 1 || tb_judul.TextLength < 1 || tb_kategori.TextLength < 1 || tb_penulis.TextLength < 1)
+            if (comboBox1.SelectedValue == null || textBox1.TextLength < 1 || tb_judul.TextLength < 1 || tb_kategori.TextLength < 1 || tb_penulis.TextLength < 1)
             {
                 MessageBox.Show("Silahkan pilih satu buku", "Eror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if(date_kembali.Value < date_pinjam.Value)
+            {
+                MessageBox.Show("Tanggal kembali harus lebih besar daripada tanggal pinjam", "Eror", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -127,10 +136,18 @@ namespace LKS_Perpustakaan
             reader.Read();
             if (reader.HasRows)
             {
-                tb_judul.Text = reader["judul"].ToString();
-                tb_kategori.Text = reader["nama_kat"].ToString();
-                tb_penerbit.Text = reader["penerbit"].ToString();
-                tb_penulis.Text = reader["penulis"].ToString();
+                if (Convert.ToInt32(reader["stok"]) > 0)
+                {
+                    tb_judul.Text = reader["judul"].ToString();
+                    tb_kategori.Text = reader["nama_kat"].ToString();
+                    tb_penerbit.Text = reader["penerbit"].ToString();
+                    tb_penulis.Text = reader["penulis"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Buku dengan kode " + textBox1.Text.ToUpper() + " sedang tidak ada stok", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
                 connection.Close();
             }
             else
@@ -151,9 +168,70 @@ namespace LKS_Perpustakaan
                 dataGridView1.Rows[row].Cells[3].Value = comboBox1.Text;
                 dataGridView1.Rows[row].Cells[4].Value = textBox1.Text;
                 dataGridView1.Rows[row].Cells[5].Value = tb_judul.Text;
-                dataGridView1.Rows[row].Cells[6].Value = date_pinjam.Value;
-                dataGridView1.Rows[row].Cells[7].Value = date_kembali.Value;
+                dataGridView1.Rows[row].Cells[6].Value = date_pinjam.Value.ToString("yyyy-MM-dd HH:mm:ss");
+                dataGridView1.Rows[row].Cells[7].Value = date_kembali.Value.ToString("yyyy-MM-dd HH:mm:ss");
             }
+        }
+
+        int getstok()
+        {
+            SqlCommand command = new SqlCommand("select * from buku where kode_buku = '" + textBox1.Text + "'", connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+            int stok = Convert.ToInt32(reader["stok"]) - 1;
+            connection.Close();
+            return stok;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.RowCount > 1)
+            {
+                string com = "insert into peminjaman values('" + dataGridView1.Rows[0].Cells[2].Value + "', '" + Model.id + "')";
+                Command.exec(com);
+
+                SqlCommand command = new SqlCommand("select top(1) * from peminjaman order by id_pinjam desc", connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                reader.Read();
+                int id_pinjam = Convert.ToInt32(reader["id_pinjam"]);
+                connection.Close();
+
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                {
+                    string com1 = "insert into peminjaman_buku(kode_buku, id_pinjam, tgl_pinjam, tgl_kembali) values('" + dataGridView1.Rows[i].Cells[4].Value + "', " + id_pinjam + ", '" + dataGridView1.Rows[i].Cells[6].Value + "', '" + dataGridView1.Rows[i].Cells[7].Value + "')";
+                    string com2 = "update buku set stok = " + getstok() + " where kode_buku = '" + textBox1.Text + "'";
+
+                    try
+                    {
+                        Command.exec(com1);
+                        Command.exec(com2);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        connection.Close();
+                    }
+                }
+
+                MessageBox.Show("Sukses", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clear();
+            }
+        }
+
+        private void clear()
+        {
+            dataGridView1.Rows.Clear();
+            comboBox1.SelectedValue = 0;
+            comboBox1.Text = "";
+            textBox1.Text = "";
+            date_pinjam.Value = DateTime.Now;
+            date_kembali.Value = DateTime.Now;
+            tb_judul.Text = "";
+            tb_kategori.Text =  "";
+            tb_penerbit.Text =  "";
+            tb_penulis.Text = "";
         }
     }
 }

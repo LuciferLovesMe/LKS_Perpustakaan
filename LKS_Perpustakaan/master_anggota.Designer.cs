@@ -567,7 +567,7 @@ namespace LKS_Perpustakaan
             // 
             // panel_anggota
             // 
-            this.panel_anggota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(7)))), ((int)(((byte)(203)))));
+            this.panel_anggota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(49)))), ((int)(((byte)(192)))));
             this.panel_anggota.Controls.Add(this.label3);
             this.panel_anggota.Controls.Add(this.label4);
             this.panel_anggota.Cursor = System.Windows.Forms.Cursors.Hand;

@@ -352,7 +352,7 @@ namespace LKS_Perpustakaan
             this.panel_user.Name = "panel_user";
             this.panel_user.Size = new System.Drawing.Size(243, 65);
             this.panel_user.TabIndex = 6;
-            this.panel_user.Click += new System.EventHandler(this.panel_kategori_Click);
+            this.panel_user.Click += new System.EventHandler(this.panel_user_Click);
             // 
             // label11
             // 
@@ -364,7 +364,7 @@ namespace LKS_Perpustakaan
             this.label11.Size = new System.Drawing.Size(64, 29);
             this.label11.TabIndex = 1;
             this.label11.Text = "User";
-            this.label11.Click += new System.EventHandler(this.panel_kategori_Click);
+            this.label11.Click += new System.EventHandler(this.panel_user_Click);
             // 
             // label12
             // 
@@ -377,7 +377,7 @@ namespace LKS_Perpustakaan
             this.label12.TabIndex = 0;
             this.label12.Text = "";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label12.Click += new System.EventHandler(this.panel_kategori_Click);
+            this.label12.Click += new System.EventHandler(this.panel_user_Click);
             // 
             // panel_kategori
             // 

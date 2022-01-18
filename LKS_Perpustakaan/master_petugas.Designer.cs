@@ -494,7 +494,7 @@ namespace LKS_Perpustakaan
             // 
             // panel_petugas
             // 
-            this.panel_petugas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(7)))), ((int)(((byte)(203)))));
+            this.panel_petugas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(49)))), ((int)(((byte)(192)))));
             this.panel_petugas.Controls.Add(this.label5);
             this.panel_petugas.Controls.Add(this.label6);
             this.panel_petugas.Cursor = System.Windows.Forms.Cursors.Hand;

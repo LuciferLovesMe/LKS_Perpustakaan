@@ -367,7 +367,7 @@ namespace LKS_Perpustakaan
             // 
             // panel_user
             // 
-            this.panel_user.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(7)))), ((int)(((byte)(203)))));
+            this.panel_user.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(49)))), ((int)(((byte)(192)))));
             this.panel_user.Controls.Add(this.label11);
             this.panel_user.Controls.Add(this.label12);
             this.panel_user.Cursor = System.Windows.Forms.Cursors.Hand;

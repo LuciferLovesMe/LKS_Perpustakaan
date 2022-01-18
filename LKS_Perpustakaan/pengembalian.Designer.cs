@@ -557,9 +557,9 @@ namespace LKS_Perpustakaan
             this.label20.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(812, 131);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(209, 23);
+            this.label20.Size = new System.Drawing.Size(117, 23);
             this.label20.TabIndex = 95;
-            this.label20.Text = "Deadline Pengembalian";
+            this.label20.Text = "Jatuh Tempo";
             // 
             // txt_deadline
             // 
@@ -567,9 +567,9 @@ namespace LKS_Perpustakaan
             this.txt_deadline.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_deadline.Location = new System.Drawing.Point(812, 156);
             this.txt_deadline.Name = "txt_deadline";
-            this.txt_deadline.Size = new System.Drawing.Size(230, 25);
+            this.txt_deadline.Size = new System.Drawing.Size(208, 25);
             this.txt_deadline.TabIndex = 96;
-            this.txt_deadline.Text = "Deadline Pengembalian";
+            this.txt_deadline.Text = "Tanggal Jatuh Tempo";
             // 
             // lbldenda
             // 

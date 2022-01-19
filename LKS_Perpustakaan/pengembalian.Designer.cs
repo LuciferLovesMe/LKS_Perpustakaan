@@ -59,22 +59,20 @@ namespace LKS_Perpustakaan
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tb_judul = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.txt_deadline = new System.Windows.Forms.Label();
+            this.lbldeadline = new System.Windows.Forms.Label();
             this.lbldenda = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.date_kembali = new System.Windows.Forms.DateTimePicker();
             this.label24 = new System.Windows.Forms.Label();
+            this.lblanggota = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel_anggota.SuspendLayout();
             this.panel_petugas.SuspendLayout();
             this.panel_lokasi.SuspendLayout();
@@ -457,51 +455,25 @@ namespace LKS_Perpustakaan
             this.button5.TabIndex = 87;
             this.button5.Text = "Kembalikan";
             this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(1)))), ((int)(((byte)(192)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Bahnschrift SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(1033, 289);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(139, 40);
-            this.button4.TabIndex = 86;
-            this.button4.Text = "Tambah";
-            this.button4.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(271, 345);
+            this.dataGridView1.Location = new System.Drawing.Point(271, 308);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(901, 289);
             this.dataGridView1.TabIndex = 85;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(1)))), ((int)(((byte)(192)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(552, 87);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 26);
-            this.button3.TabIndex = 90;
-            this.button3.Text = "Cari";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(271, 87);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(275, 26);
+            this.textBox1.Size = new System.Drawing.Size(350, 26);
             this.textBox1.TabIndex = 89;
             // 
             // label17
@@ -520,62 +492,34 @@ namespace LKS_Perpustakaan
             this.label18.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(812, 60);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(101, 23);
+            this.label18.Size = new System.Drawing.Size(58, 23);
             this.label18.TabIndex = 91;
-            this.label18.Text = "Kode Buku";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(816, 87);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(356, 26);
-            this.comboBox1.TabIndex = 92;
-            // 
-            // tb_judul
-            // 
-            this.tb_judul.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_judul.Location = new System.Drawing.Point(271, 157);
-            this.tb_judul.Name = "tb_judul";
-            this.tb_judul.Size = new System.Drawing.Size(360, 26);
-            this.tb_judul.TabIndex = 94;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(267, 131);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(58, 23);
-            this.label19.TabIndex = 93;
-            this.label19.Text = "Judul";
+            this.label18.Text = "Judul";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(812, 131);
+            this.label20.Location = new System.Drawing.Point(267, 124);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(117, 23);
             this.label20.TabIndex = 95;
             this.label20.Text = "Jatuh Tempo";
             // 
-            // txt_deadline
+            // lbldeadline
             // 
-            this.txt_deadline.AutoSize = true;
-            this.txt_deadline.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_deadline.Location = new System.Drawing.Point(812, 156);
-            this.txt_deadline.Name = "txt_deadline";
-            this.txt_deadline.Size = new System.Drawing.Size(208, 25);
-            this.txt_deadline.TabIndex = 96;
-            this.txt_deadline.Text = "Tanggal Jatuh Tempo";
+            this.lbldeadline.AutoSize = true;
+            this.lbldeadline.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldeadline.Location = new System.Drawing.Point(267, 149);
+            this.lbldeadline.Name = "lbldeadline";
+            this.lbldeadline.Size = new System.Drawing.Size(0, 25);
+            this.lbldeadline.TabIndex = 96;
             // 
             // lbldenda
             // 
             this.lbldenda.AutoSize = true;
             this.lbldenda.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldenda.Location = new System.Drawing.Point(853, 225);
+            this.lbldenda.Location = new System.Drawing.Point(308, 219);
             this.lbldenda.Name = "lbldenda";
             this.lbldenda.Size = new System.Drawing.Size(24, 25);
             this.lbldenda.TabIndex = 98;
@@ -585,7 +529,7 @@ namespace LKS_Perpustakaan
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(813, 202);
+            this.label22.Location = new System.Drawing.Point(268, 196);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(63, 23);
             this.label22.TabIndex = 97;
@@ -595,7 +539,7 @@ namespace LKS_Perpustakaan
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(814, 225);
+            this.label23.Location = new System.Drawing.Point(269, 219);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(42, 25);
             this.label23.TabIndex = 99;
@@ -604,42 +548,67 @@ namespace LKS_Perpustakaan
             // date_kembali
             // 
             this.date_kembali.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date_kembali.Location = new System.Drawing.Point(271, 228);
+            this.date_kembali.Location = new System.Drawing.Point(819, 150);
             this.date_kembali.Name = "date_kembali";
-            this.date_kembali.Size = new System.Drawing.Size(360, 26);
+            this.date_kembali.Size = new System.Drawing.Size(353, 26);
             this.date_kembali.TabIndex = 101;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(267, 202);
+            this.label24.Location = new System.Drawing.Point(815, 124);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(149, 23);
             this.label24.TabIndex = 100;
             this.label24.Text = "Tanggal Kembali";
+            // 
+            // lblanggota
+            // 
+            this.lblanggota.AutoSize = true;
+            this.lblanggota.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblanggota.Location = new System.Drawing.Point(814, 220);
+            this.lblanggota.Name = "lblanggota";
+            this.lblanggota.Size = new System.Drawing.Size(0, 25);
+            this.lblanggota.TabIndex = 103;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(812, 196);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(133, 23);
+            this.label25.TabIndex = 102;
+            this.label25.Text = "Nama Anggota";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(816, 86);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(356, 26);
+            this.textBox2.TabIndex = 104;
             // 
             // pengembalian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.lblanggota);
+            this.Controls.Add(this.label25);
             this.Controls.Add(this.date_kembali);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.lbldenda);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.txt_deadline);
+            this.Controls.Add(this.lbldeadline);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.tb_judul);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lbltime);
             this.Controls.Add(this.button2);
@@ -702,17 +671,12 @@ namespace LKS_Perpustakaan
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox tb_judul;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label txt_deadline;
+        private System.Windows.Forms.Label lbldeadline;
         private System.Windows.Forms.Label lbldenda;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
@@ -721,5 +685,8 @@ namespace LKS_Perpustakaan
         private System.Windows.Forms.Panel panel_buku;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblanggota;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
